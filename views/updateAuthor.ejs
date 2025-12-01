@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('partials/nav.ejs') %>
+    <h1> Updating Author </h1>
+    
+    
+    <%=authorInfo[0].dob %>
+
+    <form action="/updateAuthor" method="POST">
+        <input type="hidden" name="authorId" value="<%=authorInfo[0].authorId%>">
+        First Name: <input type="text" name="fn" value="<%=authorInfo[0].firstName %>"> <br>
+        Last Name: <input type="text" name="ln" value="<%=authorInfo[0].lastName %>"> <br>
+        Date of Birth <input type="date" name="dob" value="<%=authorInfo[0].ISOdob %>"> <br>
+        Date of Death <input type="date" name="dod" value="<%=authorInfo[0].ISOdod %>"> <br>
+        Biography: <textarea name="bio" value="<%=authorInfo[0].biography%>"></textarea> <br>
+        Picture URL: <textarea name="pic"></textarea> <br>
+        Sex:
+        <label><input type="radio" name="sex" 
+            <% if (authorInfo[0].sex=="M"){ %> checked <% } %>
+            value="M"> Male
+        </label>
+        <label>
+            <input type="radio" name="sex"
+            <%=(authorInfo[0].sex=='F')?"checked":""%>
+            value="F"> Female
+        </label>
+        <br>
+        <button class="btn btn-outline-success"> Update Author </button>
+    </form>
+
+</body>
+<footer>
+    <%- include("partials/foot.ejs")%>
+</footer>
+
+</html>

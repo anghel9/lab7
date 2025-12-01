@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head.ejs")%>
+</head>
+
+<body>
+    <%- include('partials/nav.ejs') %>
+
+    <h1> Adding New Author </h1>
+
+    <form action="/addAuthor" method="POST">
+        First Name: <input type="text" name="fn"> <br>
+        Last Name: <input type="text" name="ln"> <br>
+        Date of Birth <input type="date" name="dob"> <br>
+        Date of Death <input type="date" name="dod"> <br>
+        Biography: <textarea name="bio"></textarea> <br>
+        Picture URL: <textarea name="pic"></textarea> <br>
+
+            Gender: <br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="Female">Female</label><br>
+            <button class="btn btn-outline-success"> Add Author </button>
+    </form>
+
+</body>
+<footer>
+    <%- include("partials/foot.ejs")%>
+</footer>
+
+</html>

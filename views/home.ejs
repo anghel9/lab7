@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+</head>
+<body>
+   
+    <%- include('partials/nav.ejs') %>
+
+    <form action="/addAuthor">
+        <button class="btn btn-outline-success"> New Author </button>
+    </form>
+
+    <br>
+
+    <form action="/addQuote">
+        <button class="btn btn-outline-success"> New Quote </button>
+    </form>
+    <br>
+    <form action="/authors">
+        <button class="btn btn-outline-success"> All Authors </button>
+    </form>
+    <br>
+    <form action="/quotes">
+        <button class="btn btn-outline-success"> All Quotes </button>
+    </form>
+
+</body>
+<footer>
+    <%- include("partials/foot.ejs")%>
+</footer>
+</html>

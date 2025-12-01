@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs")%>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <h1>Update/Delete Authors</h1>
+    <% for (let i of authors) {%>
+        <a href="/updateAuthor?id=<%=i.authorId%>" class="btn btn-outline-success btn-sm">Update</a>
+        <form action="/deleteAuthor" method="POST" class="d-inline">
+          <input type="hidden" name="authorId" value="<%= i.authorId %>">
+          <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+        </form>
+        <%=i.firstName%> <%=i.lastName%> <br>
+    <% } %>
+</body>
+</html>

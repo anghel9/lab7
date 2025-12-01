@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include("partials/head.ejs")%>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <h1>Update/Delete Quotes</h1>
+
+    <% for(let i of quotes){%>
+        <a href="/updateQuote?quoteId=<%=i.quoteId%>" class="btn btn-outline-success btn-sm">Update</a>
+        <form action="/deleteQuote" method="POST" class="d-inline">
+          <input type="hidden" name="quoteId" value="<%= i.quoteId %>">
+          <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+        </form>
+        <%=i.quoteId%> <%=i.quote%> <br>
+    <% } %>
+</body>
+</html>
